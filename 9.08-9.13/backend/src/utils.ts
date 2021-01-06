@@ -1,9 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/no-explicit-any  */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Gender, patientEntry } from './types';
 
@@ -46,7 +43,7 @@ const parseGender = (value: any): Gender => {
 };
 
 
-const toNewPatientEntry = (object: any): patientEntry => {
+export const toNewPatientEntry = (object: any): patientEntry => {
   const newEntry = { 
     name: parseStringValue(object.name, 'name'), 
     dateOfBirth: parseDate(object.dateOfBirth), 
@@ -57,5 +54,3 @@ const toNewPatientEntry = (object: any): patientEntry => {
   };
   return newEntry;
 };
-
-export default toNewPatientEntry;

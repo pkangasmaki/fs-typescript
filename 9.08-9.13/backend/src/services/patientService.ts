@@ -1,7 +1,14 @@
 import patientData from '../../data/patients.json';
 import { patientEntry, nonConfidentalPatientEntry } from '../types';
+import { toNewPatientEntry } from '../utils';
 
-const patients: Array<patientEntry> = patientData;
+const patients: Array<patientEntry> = patientData.map(obj => {
+  const object = toNewPatientEntry(obj) ;
+  object.id = obj.id;
+  return object;
+});
+
+//const patients: Array<patientEntry> = patientData;
 
 const getEntries = (): Array<patientEntry> => {
   return patients;
